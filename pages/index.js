@@ -125,16 +125,20 @@ export default function Home() {
 
           <div>
             <a href=""> Shop now </a>
-            <Image src="/images/icon-arrow.svg" width={40} height={15} alt = "Shop now"/>
+            <Image 
+              src="/images/icon-arrow.svg" 
+              width={40} height={15} 
+              alt = "Shop now"/>
           </div>
         </section>
 
-        <section>
-          <Image src="/images/image-about-dark.jpg" 
-          layout="intrinsic"
-          width={700}
-          height={475}
-          alt="furniture" />
+        <section  className={styles.img}>
+          <Image 
+            src="/images/image-about-dark.jpg" 
+            layout='fill'
+            alt="furniture" 
+            className={styles.about}
+          />
         </section>
 
         <section>
@@ -147,12 +151,14 @@ export default function Home() {
           </p>
         </section>
 
-        <section>
-          <Image src="/images/image-about-light.jpg" 
-          layout="intrinsic"
-          width={700}
-          height={475}
-          alt="furniture" />
+        <section className={styles.img}>
+          <Image 
+            src="/images/image-about-light.jpg" 
+            layout='fill'
+            alt="furniture" 
+            className={styles.about}
+          />
+          
         </section>
       </main>
     </div>
