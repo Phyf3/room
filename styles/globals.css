@@ -49,43 +49,40 @@ a {
   .heroImage0 {
     background-image: url('../public/images/desktop-image-hero-1.jpg');
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
     background-position: left;
-    height:65vh;
-    width:55vw;
+    height:100%;
+    width:100%;
     position: relative;
     top:0;
     right:0;
     object-fit: cover;
-    /* border: 3px solid red;; */
   }
   
   .heroImage1 {
     background-image: url('../public/images/desktop-image-hero-2.jpg');
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
     background-position: left;
-    height:65vh;
-    width:55vw;
+    height:100%;
+    width:100%;
     position: relative;
     top:0;
     right:0;
-    /* border: 3px solid red;; */
-
+    object-fit: cover;
   }
   
   .heroImage2 {
     background-image: url('../public/images/desktop-image-hero-3.jpg');
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
     background-position: left;
-    height:65vh;
-    width:55vw;
+    height:100%;
+    width:100%;
     position: relative;
     top:0;
     right:0;
-    /* border: 3px solid red;; */
-
+    object-fit: cover;
   }
 }
 
