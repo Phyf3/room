@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
@@ -22,28 +23,105 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={`heroImage${imgCount}`}>
-        <header className={styles.header}>
-          <Image src="/icon-hamburger.svg" alt="Vercel Logo" width={20} height={5} />
-          <h2>room</h2>
-        </header>
+      <div className={styles.headerContainer}>
+        <div className={`heroImage${imgCount}`}>
+          <header className={styles.headerMobile}>
+            <Image src="/icon-hamburger.svg" alt="Vercel Logo" width={20} height={5} />
+            <h2>room</h2>
+          </header>
 
-        <div className={styles.navigate}>
-          <Image onClick={prevImage} src="/images/icon-angle-left.svg" alt="navigate buttons"  width={20} height={20}  className={styles.directions} />
-          <Image onClick={nextImage} src="/images/icon-angle-right.svg" alt="navigate buttons"  width={20} height={20} className={styles.directions}/>
-          {/* <button  >Left</button>
-          <button  >Right</button> */}
+          <header className={styles.headerDesktop} >
+            <h2>room</h2>
+
+            <ul>
+              <li> <a href="">home</a> </li>
+              <li> <a href="">shop</a> </li>
+              <li> <a href="">about</a> </li>
+              <li> <a href="">contact</a> </li>
+
+            </ul>
+          </header>
+
+          <div className={styles.navigate}>
+            <Image onClick={prevImage} src="/images/icon-angle-left.svg" alt="navigate buttons"  width={20} height={20}  className={styles.directions} />
+            <Image onClick={nextImage} src="/images/icon-angle-right.svg" alt="navigate buttons"  width={20} height={20} className={styles.directions}/>
+          </div>
         </div>
-      </div>
 
+        <section className={styles.headerSection}>
+          {imgCount === 0 &&
+            <>
+              <h2>  Discover innovative ways to decorate</h2>
+              <p> We provide unmatched quality, comfort, and style for property owners across the country. 
+                Our experts combine form and function in bringing your vision to life. Create a room in your 
+                own style with our collection and make your property a reflection of you and what you love.
+              </p>
+            </>
+          }
+
+          {imgCount === 1 &&
+            <>
+              <h2>We are available all across the globe</h2>
+              <p>  With stores all over the world, it's easy for you to find furniture for your home or place of business. 
+              Locally, we're in most major cities throughout the country. Find the branch nearest you using our 
+              store locator. Any questions? Don't hesitate to contact us today.
+              </p>
+            </>
+          }
+
+          {imgCount === 2 &&
+            <>
+              <h2>Manufactured with the best material</h2>
+              <p> Our modern furniture store provide a high level of quality. Our company has invested in advanced technology 
+                  to ensure that every product is made as perfect and as consistent as possible. With three decades of 
+                  experience in this industry, we understand what customers want for their home and office.
+              </p>
+            </>
+          }
+
+          <span>
+            <a href=""> Shop now </a>
+            <Image src="/images/icon-arrow.svg" width={40} height={15} alt = "Shop now"/>
+          </span>
+
+          <div>
+            <Image onClick={prevImage} src="/images/icon-angle-left.svg" alt="navigate buttons"  width={20} height={20}  className={styles.arrow} />
+            <Image onClick={nextImage} src="/images/icon-angle-right.svg" alt="navigate buttons"  width={20} height={20} className={styles.arrow}/>
+          </div>
+        </section>
+      </div>
 
       <main className={styles.main}>
         <section>
-          <h2>  Discover innovative ways to decorate</h2>
-          <p> We provide unmatched quality, comfort, and style for property owners across the country. 
-            Our experts combine form and function in bringing your vision to life. Create a room in your 
-            own style with our collection and make your property a reflection of you and what you love.
-          </p>
+          {imgCount === 0 &&
+          <>
+            <h2>  Discover innovative ways to decorate</h2>
+            <p> We provide unmatched quality, comfort, and style for property owners across the country. 
+              Our experts combine form and function in bringing your vision to life. Create a room in your 
+              own style with our collection and make your property a reflection of you and what you love.
+            </p>
+            </>
+          }
+
+          {imgCount === 1 &&
+          <>
+            <h2>We are available all across the globe</h2>
+            <p>  With stores all over the world, it's easy for you to find furniture for your home or place of business. 
+            Locally, we're in most major cities throughout the country. Find the branch nearest you using our 
+            store locator. Any questions? Don't hesitate to contact us today.
+            </p>
+            </>
+          }
+
+          {imgCount === 2 &&
+          <>
+            <h2>Manufactured with the best material</h2>
+            <p> Our modern furniture store provide a high level of quality. Our company has invested in advanced technology 
+                to ensure that every product is made as perfect and as consistent as possible. With three decades of 
+                experience in this industry, we understand what customers want for their home and office.
+            </p>
+            </>
+          }
 
           <div>
             <a href=""> Shop now </a>
@@ -52,7 +130,29 @@ export default function Home() {
         </section>
 
         <section>
-          <Image src="/images/image-about-dark.jpg" width={40} height={15} alt="furniture" />
+          <Image src="/images/image-about-dark.jpg" 
+          layout="intrinsic"
+          width={700}
+          height={475}
+          alt="furniture" />
+        </section>
+
+        <section>
+          <h2>About our furniture</h2>
+          
+          <p>Our multifunctional collection blends design and function to suit your individual taste.
+            Make each room unique, or pick a cohesive theme that best express your interests and what
+            inspires you. Find the furniture pieces you need, from traditional to contemporary styles
+            or anything in between. Product specialists are available to help you create your dream space.
+          </p>
+        </section>
+
+        <section>
+          <Image src="/images/image-about-light.jpg" 
+          layout="intrinsic"
+          width={700}
+          height={475}
+          alt="furniture" />
         </section>
       </main>
     </div>

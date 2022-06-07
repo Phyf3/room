@@ -5,6 +5,7 @@ body {
   margin: 0;
   font-family: 'League Spartan', sans-serif;
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -14,12 +15,11 @@ a {
 
 * {
   box-sizing: border-box;
-  margin:0;
-  padding:0
+
 }
 
 .heroImage0 {
-  background-image: url('../public/images/desktop-image-hero-1.jpg');
+  background-image: url('../public/images/mobile-image-hero-1.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -28,7 +28,7 @@ a {
 }
 
 .heroImage1 {
-  background-image: url('../public/images/desktop-image-hero-2.jpg');
+  background-image: url('../public/images/mobile-image-hero-2.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -37,11 +37,54 @@ a {
 }
 
 .heroImage2 {
-  background-image: url('../public/images/desktop-image-hero-3.jpg');
+  background-image: url('../public/images/mobile-image-hero-3.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height:100vw;
   position: relative;
+}
+
+@media screen and (min-width: 1024px) {
+  .heroImage0 {
+    background-image: url('../public/images/desktop-image-hero-1.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: left;
+    height:65vh;
+    width:55vw;
+    position: relative;
+    top:0;
+    right:0;
+    /* border: 3px solid red;; */
+  }
+  
+  .heroImage1 {
+    background-image: url('../public/images/desktop-image-hero-2.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: left;
+    height:65vh;
+    width:55vw;
+    position: relative;
+    top:0;
+    right:0;
+    /* border: 3px solid red;; */
+
+  }
+  
+  .heroImage2 {
+    background-image: url('../public/images/desktop-image-hero-3.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: left;
+    height:65vh;
+    width:55vw;
+    position: relative;
+    top:0;
+    right:0;
+    /* border: 3px solid red;; */
+
+  }
 }
 
