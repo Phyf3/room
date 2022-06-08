@@ -7,6 +7,8 @@ import styles from '../styles/Home.module.css'
 export default function Home() {
   const [imgCount, setImgCount] = useState(0);
 
+  const [menu, setMenu] = useState(false)
+
   const nextImage = () => {
     setImgCount(imgCount === 2 ? 2 : imgCount + 1)
   }
@@ -26,9 +28,30 @@ export default function Home() {
       <div className={styles.headerContainer}>
         <div className={`heroImage${imgCount}`}>
           <header className={styles.headerMobile}>
-            <Image src="/icon-hamburger.svg" alt="Vercel Logo" width={20} height={5} />
+            <Image 
+              onClick={() => setMenu(true)}
+              src="/icon-hamburger.svg" 
+              alt="open menu" 
+              width={20} height={5} 
+            />
             <h2>room</h2>
           </header>
+
+          <div className={menu ? styles.menubar : styles.hide}>
+            <Image 
+              onClick={() => setMenu(false)}
+              src="/images/icon-close.svg" 
+              width={20} height={10}
+              alt="close menu"
+            />
+
+            <ul>
+              <li> <a href="">home</a> </li>
+              <li> <a href="">shop</a> </li>
+              <li> <a href="">about</a> </li>
+              <li> <a href="">contact</a> </li>
+            </ul>
+          </div>
 
           <header className={styles.headerDesktop} >
             <h2>room</h2>
@@ -38,7 +61,6 @@ export default function Home() {
               <li> <a href="">shop</a> </li>
               <li> <a href="">about</a> </li>
               <li> <a href="">contact</a> </li>
-
             </ul>
           </header>
 
