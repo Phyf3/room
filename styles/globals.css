@@ -45,6 +45,7 @@ a {
   position: relative;
 }
 
+
 @media screen and (min-width: 1024px) {
   .heroImage0 {
     background-image: url('/images/desktop-image-hero-1.jpg');

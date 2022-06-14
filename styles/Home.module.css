@@ -20,9 +20,10 @@
   justify-content: space-between;
   background-color: white;
   width:100vw;
-  padding:.5rem 1rem;
+  padding:.3rem .5rem;
   position: fixed;
   top:0;
+  z-index: 3;
 }
 
 .menubar ul {
@@ -34,9 +35,15 @@
 .menubar ul li {
   font-weight: 600;
   margin-right: .5rem;
+  border-bottom: 1px solid black;
 }
 .hide {
   display:none
+}
+.close {
+  margin-left: 20px;
+  display: grid;
+  place-items: center;
 }
 
 .navigate {
@@ -105,6 +112,56 @@
 }
 .img .about {
   object-fit: cover; 
+}
+
+.menubar {
+  animation : opac 200ms ease-in;
+}
+.anim_1 {
+  animation: menuslide 800ms ease-in-out;
+}
+.anim_2 {
+  animation: menuslide 650ms ease-in-out;
+}
+.anim_3 {
+  animation: menuslide 480ms ease-in-out;
+}
+.anim_4 {
+  animation: menuslide 400ms ease-in-out;
+}
+.main {
+  animation: come-in 1000ms ease-in-out;
+}
+
+@keyframes come-in {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes menuslide {
+  from {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0%);
+      opacity: 1;
+  }
+}
+
+@keyframes opac {
+  from {
+      transform: translateY(-50%);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0%);
+      opacity: 1;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -237,5 +294,23 @@
     object-fit: cover; 
     position: relative;
   }
+
+  .anim_1 {
+    animation: menuslide 1100ms ease-in-out;
+  }
+  .anim_2 {
+    animation: menuslide 950ms ease-in-out;
+  }
+  .anim_3 {
+    animation: menuslide 800ms ease-in-out;
+  }
+  .anim_4 {
+    animation: menuslide 600ms ease-in-out;
+  }
+
+  .headerSection, .furniture {
+    animation: come-in 2000ms ease-in-out;
+  }
+
 }
 

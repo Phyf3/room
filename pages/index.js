@@ -1,4 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
+import { motion, useAnimation } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
@@ -16,6 +18,28 @@ export default function Home() {
   const prevImage = () => {
     setImgCount(imgCount === 0 ? 0 :  imgCount - 1)
   }
+  const controls = useAnimation()
+  const [ref, inView] = useInView({
+      threshold:0.3
+  })
+
+  const container = {
+    hidden: { opacity:0, x:-50},
+    show: {
+      opacity:1,
+      x : 0,
+      transition: {
+        duration: .7,
+        staggerChildren: 0.3,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const items = {
+    hidden: {opacity:0, x: 50 },
+    show: {opacity:1, x: 0, transition: {duration:.5}}
+  };
 
   return (
     <div className={styles.container}>
@@ -28,28 +52,35 @@ export default function Home() {
       <div className={styles.headerContainer}>
         <div className={`heroImage${imgCount}`}>
           <header className={styles.headerMobile}>
-            <Image 
-              onClick={() => setMenu(true)}
-              src="/icon-hamburger.svg" 
-              alt="open menu" 
-              width={20} height={5} 
-            />
+            <div className={styles.hamburger}>
+              <Image 
+                onClick={() => setMenu(true)}
+                src="/icon-hamburger.svg" 
+                alt="open menu" 
+                width={27} height={20} 
+              />
+            </div>
+            
             <h2>room</h2>
           </header>
 
-          <div className={menu ? styles.menubar : styles.hide}>
-            <Image 
-              onClick={() => setMenu(false)}
-              src="/images/icon-close.svg" 
-              width={20} height={10}
-              alt="close menu"
-            />
+          <div 
+     
+            className={menu ? styles.menubar : styles.hide}>
+            <div  className={styles.close}>
+              <Image 
+                onClick={() => setMenu(false)}
+                src="/images/icon-close.svg" 
+                width={20} height={20}
+                alt="close menu"
+              />
+            </div>
 
             <ul>
-              <li> <a href="">home</a> </li>
-              <li> <a href="">shop</a> </li>
-              <li> <a href="">about</a> </li>
-              <li> <a href="">contact</a> </li>
+              <li className={styles.anim_1}> <a href="">home</a> </li>
+              <li className={styles.anim_2}> <a href="">shop</a> </li>
+              <li className={styles.anim_3}> <a href="">about</a> </li>
+              <li className={styles.anim_4}> <a href="">contact</a> </li>
             </ul>
           </div>
 
@@ -57,10 +88,10 @@ export default function Home() {
             <h2>room</h2>
 
             <ul>
-              <li> <a href="">home</a> </li>
-              <li> <a href="">shop</a> </li>
-              <li> <a href="">about</a> </li>
-              <li> <a href="">contact</a> </li>
+              <li className={styles.anim_1}> <a href="">home</a> </li>
+              <li className={styles.anim_2}> <a href="">shop</a> </li>
+              <li className={styles.anim_3}> <a href="">about</a> </li>
+              <li className={styles.anim_4}> <a href="">contact</a> </li>
             </ul>
           </header>
 
@@ -163,7 +194,7 @@ export default function Home() {
           />
         </section>
 
-        <section>
+        <section className={styles.furniture}>
           <h2>About our furniture</h2>
           
           <p>Our multifunctional collection blends design and function to suit your individual taste.
