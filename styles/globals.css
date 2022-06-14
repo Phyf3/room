@@ -19,7 +19,7 @@ a {
 }
 
 .heroImage0 {
-  background-image: url('../public/images/mobile-image-hero-1.jpg');
+  background-image: url('../design/bg/mobile-image-hero-1.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -28,7 +28,7 @@ a {
 }
 
 .heroImage1 {
-  background-image: url('../public/images/mobile-image-hero-2.jpg');
+  background-image: url('../design/bg/mobile-image-hero-2.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -37,7 +37,7 @@ a {
 }
 
 .heroImage2 {
-  background-image: url('../public/images/mobile-image-hero-3.jpg');
+  background-image: url('../design/bg/mobile-image-hero-3.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -47,7 +47,7 @@ a {
 
 @media screen and (min-width: 1024px) {
   .heroImage0 {
-    background-image: url('../public/images/desktop-image-hero-1.jpg');
+    background-image: url('../design/bg/desktop-image-hero-1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
@@ -60,7 +60,7 @@ a {
   }
   
   .heroImage1 {
-    background-image: url('../public/images/desktop-image-hero-2.jpg');
+    background-image: url('../design/bg/desktop-image-hero-2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
@@ -73,7 +73,7 @@ a {
   }
   
   .heroImage2 {
-    background-image: url('../public/images/desktop-image-hero-3.jpg');
+    background-image: url('../design/bg/desktop-image-hero-3.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
