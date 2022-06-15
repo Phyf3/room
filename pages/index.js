@@ -1,6 +1,4 @@
 /* eslint-disable react/no-unescaped-entities */
-import { motion, useAnimation } from "framer-motion"
-import { useInView } from "react-intersection-observer"
 import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react'
@@ -18,28 +16,6 @@ export default function Home() {
   const prevImage = () => {
     setImgCount(imgCount === 0 ? 0 :  imgCount - 1)
   }
-  const controls = useAnimation()
-  const [ref, inView] = useInView({
-      threshold:0.3
-  })
-
-  const container = {
-    hidden: { opacity:0, x:-50},
-    show: {
-      opacity:1,
-      x : 0,
-      transition: {
-        duration: .7,
-        staggerChildren: 0.3,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const items = {
-    hidden: {opacity:0, x: 50 },
-    show: {opacity:1, x: 0, transition: {duration:.5}}
-  };
 
   return (
     <div className={styles.container}>
